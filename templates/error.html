@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <meta charset="utf-8"/>
+    <title>SocialWatch - Advanced Social Media Analytics App</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"/>
+    <link rel="apple-touch-icon" href="{% static 'socialwatch/pages/ico/60.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static '' %}pages/ico/76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'socialwatch/' %}pages/ico/120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'socialwatch/' %}pages/ico/152.png">
+    <link rel="icon" type="image/x-icon" href="{% static 'socialwatch/' %}favicon.ico"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <link href="{% static 'socialwatch/assets/plugins/pace/pace-theme-flash.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'socialwatch/assets/plugins/boostrapv3/css/bootstrap.min.css' %}" rel="stylesheet"
+          type="text/css"/>
+</head>
+<body>
+{% block content %}
+        <div class="inner text-center p-t-50 m-t-80 full-height" style="transform: translateY(6.12px); opacity: 1; margin-top: 150px">
+            <img class="sm-image-responsive-height" src="{% static 'socialwatch/assets/img/error_icon.png' %}"
+                 width="100"
+                 height="100">
+            <div class="m-b-10">
+                <h2 class=" p-t-10 inline">Max Number of Trackers Reached</h2>
+            </div>
+        </div>
+{% endblock %}
+</body>

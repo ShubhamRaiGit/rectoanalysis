@@ -1,0 +1,8 @@
+{% extends "registration/base.html" %}
+{% load i18n %}
+<div class="col-md-4">
+    {% block content %}
+        <h4 class='text-align-center'>You have successfully logged out.</h4>
+        <h4 class='text-align-center lead'><a href="{% url 'auth_login' %}">Login</a></h4></p>
+    {% endblock %}
+</div>

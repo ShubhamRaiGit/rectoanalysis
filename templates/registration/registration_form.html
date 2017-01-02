@@ -1,0 +1,22 @@
+{% extends "registration/base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<h4>Register for free!</h4>
+<form method="post" action=".">
+  {% csrf_token %}
+  {{ form|crispy }}
+
+  <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Join' %}" />
+</form>
+
+<hr/>
+<div class='row'>
+<h5>Need to <a href="{% url 'auth_login' %}">Login</a>?</h5>
+</div>
+
+
+{% endblock %}

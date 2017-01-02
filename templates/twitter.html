@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block content %}
+    <!-- Start hashtag pannel-->
+    <div class="panel panel-default">
+        <div class="panel-heading separator">
+
+            <h4 class="semi-bold" style="text-align: center">Create New Tracker</h4>
+        </div>
+        <div class="panel-body">
+            <div class="panel">
+                <form method="post" action="">
+                    {% csrf_token %}
+                    {{ tracker_form | crispy }}
+                    <button class="btn btn-block btn-primary" type="submit" name="hashtag">Submit</button>
+                </form>
+                {% if error == True %}
+                    <h1>Max Number of Tracker Reached</h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- End hashtag panel-->
+
+    <!-- Start List Panel-->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">List of Active Trackers</div>
+        </div>
+        <div class="panel-body scrollable">
+            <!-- REMOVE THIS WRAPPER IF .scrollable IS NOT USED -->
+            <div style="max-height:250px">
+                {% if not list_of_trackers %}
+                    <p><strong>No Trackers Found</strong></p>
+                {% else %}
+                    <table class="table table-striped" style="text-align: left;">
+                    <tr>
+                        <td><strong>Tracking_number</strong></td>
+                        <td><strong>Keyword</strong></td>
+                        <td><strong>Creation Time</strong></td>
+                        <td>View</td>
+                    </tr>
+                    {% for tracker in list_of_trackers %}
+                        <tr>
+                            <td>{{ tracker.tracking_number }}</td>
+                            <td>{{ tracker.keyword }}</td>
+                            <td>{{ tracker.timestamp }}</td>
+                            <td><a href="{{ tracker.get_absolut_url }}" class="btn btn-block btn-primary">View</a></td>
+                        </tr>
+
+                    {% endfor %}
+                {% endif %}
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
