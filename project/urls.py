@@ -21,3 +21,4 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^', include('socialwatch.urls')),
 ]
+admin.site.site_header = 'Social-Watch | Administration'
